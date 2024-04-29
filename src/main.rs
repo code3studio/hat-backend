@@ -7,6 +7,7 @@ use actix_web::{get, middleware::Logger, web::Data, App, HttpResponse, HttpServe
 use env_logger::Env;
 use routes::generate::generate;
 
+use crate::routes::generate::{get_info, get_userinfo, user_count};
 use crate::services::db::Database;
 
 #[actix_web::main]
@@ -24,7 +25,7 @@ async fn main() -> std::io::Result<()> {
                     .allow_any_header()
                     .allow_any_method(),
             )
-            .service(scope("/api").service(generate))
+            .service(scope("/api").service(generate).service(user_count).service(get_info).service(get_userinfo))
         // .app_data(db_data.clone())
     })
     .bind(("0.0.0.0", 5003))?;
