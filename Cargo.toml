@@ -1,0 +1,19 @@
+[package]
+name = "failsol-detail"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-cors = "0.7.0"
+actix-web = "4"
+chrono = "0.4.37"
+env_logger = "0.11.3"
+futures-util = "0.3.30"
+mongodb = "2.8.2"
+regex = "1.10.4"
+serde = "1.0.197"
+solana-client = "1.18.10"
+solana-sdk = "1.18.10"
+solana-transaction-status = "1.18.10"
